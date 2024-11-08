@@ -7,6 +7,7 @@ export default {
       sans: '"Montserrat", serif',
     },
     colors: {
+      transparent: "transparent",
       gray: "var(--color-gray)",
       primary: "var(--color-primary)",
       white: "var(--color-white)",

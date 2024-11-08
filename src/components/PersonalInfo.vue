@@ -3,7 +3,7 @@ import InputBase from "@/shared/ui/InputBase.vue";
 </script>
 
 <template>
-  <div class="flex w-[800px] flex-col gap-3">
+  <div class="flex w-full flex-col gap-3">
     <p class="mb-3 font-medium">Персональные данные</p>
     <InputBase
       input-label="Имя"
