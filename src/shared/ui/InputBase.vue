@@ -9,6 +9,8 @@ function handleKeyDown(event: KeyboardEvent) {
   const key = event.key;
   if (isNaN(Number(event.key)) && key !== "Backspace") event.preventDefault();
 }
+
+const model = defineModel();
 </script>
 
 <template>
@@ -18,11 +20,13 @@ function handleKeyDown(event: KeyboardEvent) {
       @keydown="handleKeyDown($event)"
       type="text"
       placeholder=""
+      v-model="model"
     />
     <input
       v-else
       type="text"
       placeholder=""
+      v-model="model"
     />
     <label>{{ inputLabel }}</label>
   </div>
@@ -32,7 +36,7 @@ function handleKeyDown(event: KeyboardEvent) {
 .input-box {
   @apply relative;
   input {
-    @apply border-gray-light w-full rounded border px-4 pb-1.5 pt-6 text-sm outline-1 placeholder:opacity-0;
+    @apply w-full rounded border border-gray-light px-4 pb-1.5 pt-6 text-sm outline-1 placeholder:opacity-0;
     &:focus,
     &:not(:placeholder-shown) {
       + label {

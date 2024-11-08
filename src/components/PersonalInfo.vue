@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import usePersonalStore from "@/shared/stores/personal";
 import InputBase from "@/shared/ui/InputBase.vue";
+
+const personalStore = usePersonalStore();
 </script>
 
 <template>
@@ -8,15 +11,12 @@ import InputBase from "@/shared/ui/InputBase.vue";
     <InputBase
       input-label="Имя"
       type="text"
+      v-model="personalStore.name"
     />
     <InputBase
       input-label="Возраст"
       type="number"
-    />
-    <input
-      type="text"
-      inputmode="numeric"
-      pattern="[0-9]*"
+      v-model="personalStore.age"
     />
   </div>
 </template>
