@@ -21,7 +21,7 @@ const routes = [
         <RouterLink
           v-for="route in routes"
           :to="route.to"
-          class="hover:text-black cursor-pointer text-gray transition-all"
+          class="hover:text-black cursor-pointer text-sm text-gray transition-all"
         >
           {{ route.name }}
         </RouterLink>

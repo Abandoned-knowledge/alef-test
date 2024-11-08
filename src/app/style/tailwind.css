@@ -12,4 +12,8 @@
     --color-gray-light: #f1f1f1;
     --color-gray-medium: #fafafa;
   }
+
+  :where(*) {
+    color: var(--color-black);
+  }
 }
