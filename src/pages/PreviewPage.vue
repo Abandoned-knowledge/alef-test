@@ -2,8 +2,11 @@
 import DefaultLayout from "@/app/layouts/DefaultLayout.vue";
 import useChildrenStore from "@/shared/stores/children";
 import usePersonalStore from "@/shared/stores/personal";
+import { computed } from "vue";
 const personalStore = usePersonalStore();
 const childrenStore = useChildrenStore();
+
+const hasChildren = computed(() => childrenStore.children.length > 0);
 </script>
 
 <template>
@@ -15,12 +18,20 @@ const childrenStore = useChildrenStore();
 
     <div class="flex w-full flex-col gap-5">
       <p>Дети</p>
-      <div
-        class="w-fit rounded bg-gray-light px-5 py-3"
-        v-for="child in childrenStore.children"
+      <p
+        v-if="!hasChildren"
+        class="text-xl font-medium"
       >
-        <p class="font-bold">{{ child.name }}, {{ child.age }} лет</p>
-      </div>
+        Нет детей
+      </p>
+      <template v-else>
+        <div
+          class="w-fit rounded bg-gray-light px-5 py-3"
+          v-for="child in childrenStore.children"
+        >
+          <p class="font-bold">{{ child.name }}, {{ child.age }} лет</p>
+        </div>
+      </template>
     </div>
   </DefaultLayout>
 </template>

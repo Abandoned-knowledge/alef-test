@@ -8,8 +8,6 @@ const isButtonShow = computed(() => childrenStore.children.length < 5);
 const hasChildren = computed(() => childrenStore.children.length > 0);
 
 const childrenStore = useChildrenStore();
-
-const array = [1, 2, 3];
 </script>
 
 <template>
