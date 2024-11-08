@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import HeaderBase from "@/components/HeaderBase.vue";
+import DefaultLayout from "@/app/layouts/DefaultLayout.vue";
 import useChildrenStore from "@/shared/stores/children";
 import usePersonalStore from "@/shared/stores/personal";
 const personalStore = usePersonalStore();
@@ -7,8 +7,7 @@ const childrenStore = useChildrenStore();
 </script>
 
 <template>
-  <HeaderBase />
-  <main class="container mt-8 flex w-[800px] flex-col items-center gap-8">
+  <DefaultLayout>
     <div class="w-full">
       <p>Персональные данные</p>
       <p class="mt-5 font-bold">{{ personalStore.getFullName }}</p>
@@ -23,5 +22,5 @@ const childrenStore = useChildrenStore();
         <p class="font-bold">{{ child.name }}, {{ child.age }} лет</p>
       </div>
     </div>
-  </main>
+  </DefaultLayout>
 </template>
